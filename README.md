@@ -1,6 +1,29 @@
+## How to return your exercises
+
+You return your exercises by pushing your answers to your personal repository.
+
+The deadlines are every Sunday. From part 3 onwards, **they might still change**:
+
+|Part| Deadline           | Exercises |
+|:--:|:------------------:|:----------|
+| 1  | 26.01.2020 at 23:59| 40        |
+| 2  | 02.02.2020 at 23:59| XX        |
+| 3  | 09.02.2020 at 23:59| XX        |
+| 4  | 16.02.2020 at 23:59| XX        |
+| 5  | 23.02.2020 at 23:59| XX        |
+| 6  | 01.03.2020 at 23:59| XX        |
+
+## How to get more exercises
+
+You can get more exercises to your local computer by **pulling this repository** with the command **git pull**.  
+
+You can also update tests with this, if there are some problems.
+
 # Exercises
 
-## Part 1
+The following instructions are also in the subfolders of each part.
+
+# Part 1
 
 ## Printing and reading
 
@@ -130,7 +153,9 @@ Thank you for sharing!
 ```
 
 #### Exercise_10
-* Create a program, that asks the user for a name and a profession. Then make the program to write a little story with this information. Here is an example story with inputs **Ada** and **Data Scientist**:
+* Create a program, that asks the user for a name and a profession. Then make the program to write a little story with this information. Here is an example story with inputs **Ada** and **Data Scientist**.
+
+NOTICE! Every **Ada** and **Data Scientist** in the story are the inputs by the user. Remember to save the **Console.ReadLines** into variables and use them as parts of the story!
 
 ```console
 I will tell a story, but I need some information.
@@ -253,7 +278,7 @@ How many days?
 
 #### Exercise_17
 
-Create a program, which asks the user for two integers, and calculates their sum.  
+* Create a program, which asks the user for two integers, and calculates their sum.  
 
 Remember, that the input is a string, so you have to convert it to integer!
 
@@ -277,7 +302,7 @@ The sum is 2
 
 #### Exercise_18
 
-Expand a little on the previous exercise. Now create a program, which asks for three integers, and calculates their sum.
+* Expand a little on the previous exercise. Now create a program, which asks for three integers, and calculates their sum.
 
 ```console
 Give the first number!
@@ -291,7 +316,7 @@ The sum is 4
 
 #### Exercise_19
 
-Create a program, which asks the user for two integers and counts their sum. This time, also print the equation to the user, too.
+* Create a program, which asks the user for two integers and counts their sum. This time, also print the equation to the user, too.
 
 ```console
 Give the first number!
@@ -311,7 +336,7 @@ Give the second number!
 
 #### Exercise_20
 
-Create a program, which asks the user for two integers and multiplies them with each other.
+* Create a program, which asks the user for two integers and multiplies them with each other.
 
 ```console
 Give the first number!
@@ -331,7 +356,7 @@ Give the second number!
 
 #### Exercise_21
 
-Create a program, which asks the user for two **integers** and calculates their **average** as a **double**.
+* Create a program, which asks the user for two **integers** and calculates their **average** as a **double**.
 
 ```console
 Give the first number!
@@ -343,7 +368,7 @@ The average is 2.5
 
 #### Exercise_22
 
-Create a program, which asks the user for three **integers** and calculates their **average** as a **double**.
+* Create a program, which asks the user for three **integers** and calculates their **average** as a **double**.
 
 ```console
 Give the first number!
@@ -357,7 +382,7 @@ The average is 2.0
 
 #### Exercise_23
 
-Let's create a program, that does all the basic calculations from user input! Ask for two integers and do the calculations with them.
+* Let's create a program, that does all the basic calculations from user input! Ask for two integers and do the calculations with them.
 
 ```console
 Give the first number!
@@ -374,7 +399,7 @@ Give the second number!
 
 #### Exercise_24
 
-Create a program, which asks the user for an integer.
+* Create a program, which asks the user for an integer.
 
 If the given integer is larger than 120, output "Speeding!".
 
@@ -391,7 +416,7 @@ Speeding!
 
 #### Exercise_25
 
-Create a program which asks for an integer. If the integer is 1984, output "Orwell".
+* Create a program which asks for an integer. If the integer is 1984, output "Orwell".
 
 ```console
 Give a number:
@@ -406,7 +431,7 @@ Orwell
 
 #### Exercise_26
 
-Create a program which asks for an integer. If the integer is less than 1900, output "You're old".
+* Create a program which asks for an integer. If the integer is less than 1900, output "You're old".
 
 ```console
 Give your age:
@@ -421,7 +446,7 @@ You're old
 
 #### Exercise_27
 
-Create a program which tells if the given number is positive (greater than zero), or not.
+* Create a program which tells if the given number is positive (greater than zero), or not.
 
 ```console
 Give a number:
@@ -437,7 +462,7 @@ It is not positive
 
 ### Exercise_28
 
-Create a program which tell if the given person is legally adult (in Finland, over 18), or not.
+* Create a program which tell if the given person is legally adult (in Finland, over 18), or not.
 
 ```console
 How old are you?
@@ -453,7 +478,7 @@ You're an adult!
 
 ### Exercise_29
 
-Create a program which asks for two integers. The program should tell which of them is greater. If they are equal, that should be noted, too.
+* Create a program which asks for two integers. The program should tell which of them is greater. If they are equal, that should be noted, too.
 
 ```console
 Give the first number!
@@ -494,7 +519,7 @@ Here is the grading for this course:
 | 90 - 100 | 5 |
 | > 100 | Outstanding! |
 
-Create a program, which asks the user for their percent, and gives them their score. For example:
+* Create a program, which asks the user for their percent, and gives them their score. For example:
 
 ```console
 Give your percent [0 - 100]:
@@ -523,30 +548,30 @@ Grade: 5
 ```console
 Give your percent [0 - 100]:
 > 9001
-Grade: Outstanding!
+Outstanding!
 ```
 
 #### Exercise_31
 
-Create a program which asks for an integer and tells the user if it is even or not.
+* Create a program which asks for an integer and tells the user if it is even or not.
 
 ```console
 Give a number:
 > 2
-It is even
+It is even.
 ```
 
 ````console
 Give a number
 > 5
-It is odd
+It is odd.
 ````
 
 Hint: You might want to use the **%** operator to get the remainder after a division with 2.
 
 #### Exercise_32
 
-Create a program which asks for a string. If the string is "Mellon", print "Welcome, friend", otherwise print "They've got a cave troll!"
+* Create a program which asks for a string. If the string is "Mellon", print "Welcome, friend", otherwise print "They've got a cave troll!"
 
 ```console
 Speak, friend, and enter!
@@ -562,7 +587,7 @@ Welcome, friend
 
 #### Exercise_33
 
-Create a program which asks for two string. If the strings are equal, print "Echo", otherwise print "Nope".
+* Create a program which asks for two string. If the strings are equal, print "Echo", otherwise print "Nope".
 
 ```console
 Give the first string:
@@ -584,7 +609,7 @@ Nope!
 
 #### Exercise_34
 
-Create a program which asks the user if they want to continue. If the user answers "no", then quit the program. Otherwise, ask again.
+* Create a program which asks the user if they want to continue. If the user answers "no", then quit the program. Otherwise, ask again.
 
 Hint: Use a while-loop!
 
@@ -599,7 +624,7 @@ Do you want to continue?
 
 #### Exercise_35
 
-Create a program, which asks the user for integers, until the user give the number "42".
+* Create a program, which asks the user for integers, until the user give the number "42".
 
 ```console
 Give a number:
@@ -614,7 +639,7 @@ Give a number:
 
 #### Exercise_36
 
-Create a program, which asks the user for integers. If the number is zero, exit the program. If the number is negative, give the user message "That is negative". If the number is positive, output the number, raised to its second power (the number multiplied with itself).
+* Create a program, which asks the user for integers. If the number is zero, exit the program. If the number is negative, give the user message "That is negative". If the number is positive, output the number, raised to its second power (the number multiplied with itself).
 
 ```console
 Give a number:
@@ -632,7 +657,7 @@ Give a number:
 
 #### Exercise_37
 
-Create a program which asks the user for integers. If the integer is 0, quit. In the end, output "Total amount of numbers:" and the amount. Do not count the 0 into the amount.
+* Create a program which asks the user for integers. If the integer is 0, quit. In the end, output "Total amount of numbers:" and the amount. Do not count the 0 into the amount.
 
 ```console
 Give a number:
@@ -648,7 +673,7 @@ Total amount of numbers: 3
 
 #### Exercise_38
 
-Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total amount of **negative numbers** with "Total amount of negative numbers:" and the amount. Do not count the 0 into the amount.
+* Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total amount of **negative numbers** with "Total amount of negative numbers:" and the amount. Do not count the 0 into the amount.
 
 ```console
 Give a number:
@@ -664,7 +689,7 @@ Total amount of negative numbers: 1
 
 #### Exercise_39
 
-Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total **sum** of the numbers with "Total sum of numbers:" and the sum. Do not count the 0 into the sum, even though it does not change the result.
+* Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total **sum** of the numbers with "Total sum of numbers:" and the sum. Do not count the 0 into the sum, even though it does not change the result.
 
 ```console
 Give a number:
@@ -680,7 +705,7 @@ Total sum of numbers: 25
 
 #### Exercise_40
 
-Create a program which asks the user for integers. Exit with 0. In the end, output both the amount and the sum. Do not count 0 to either.
+* Create a program which asks the user for integers. Exit with 0. In the end, output both the amount and the sum. Do not count 0 to either.
 
 ```console
 Give a number:
@@ -696,3 +721,364 @@ Total amount of numbers: 3
 ```
 
 Hint: You will need two variables to store the data, one for the sum, one for the amount.
+
+
+# Part 2
+
+## Subproblems
+
+#### Exercise_41
+
+* Write a program that reads an integer from the user input, and then prints the second power of the given integer, i.e. the integer multiplied by itself.
+
+```console
+> 4
+16
+```
+
+```console
+> 5
+25
+```
+
+```console
+> -3
+9
+```
+
+#### Exercise_42
+
+* Write a program that reads **two integers** from the user, and prints the **square root of the sum of these integers**. The program **does not need to work with negative values**.
+
+You can get the square root of an integer with the command Math.Sqrt like this:
+
+```cs
+int number = 42;
+double squareRoot = Math.Sqrt(number);
+Console.WriteLine(squareRoot);
+```
+
+```console
+> 1 
+> 0 
+1
+```
+
+```console
+> 5 
+> 4 
+3
+```
+
+```console
+> 1 
+> 35 
+6
+```
+
+#### Exercise_43
+
+* Write a program, that reads an integer from the user. If the number is less than 0, it prints the number multiplied by -1. Otherwise the program prints the number itself. A few examples of the expected function below:
+
+```console
+> -3
+3
+```
+
+```console
+> 1
+1
+```
+
+```console
+> 0
+0
+```
+
+#### Exercise_44
+
+* Write a program that reads two integers from the user input. If the first number is greater than the second, the program prints "(first) is greater than (second)." If the first number is less than the second, the program prints "(first) is less than (second)." Otherwise the program prints "(first) is equal to (second)." The (first) and (second) should always be replaced with the actual numbers given by the user.
+
+A few examples of the expected behaviour:
+
+```console
+> 8 
+> 4 
+8 is greater than 4.
+```
+
+```console
+> -3 
+> 5 
+-3 is less than 5.
+```
+
+```console
+> 1 
+> 1 
+1 is equal to 1.
+```
+
+## More loops
+
+#### Exercise_45
+
+* Write a program that reads an integer from the user. Then the program prints numbers from 0 to the number given by the user. You can assume that the user always gives a positive number. Below is some examples of the wanted functionality. **You can use either a while-loop with a condition, or a for-loop.**
+
+```console
+> 4
+0
+1
+2
+3
+4
+```
+
+```console
+> 1
+0
+1
+```
+
+#### Exercise_46
+
+* Write a program, which reads an integer from the user. Then the program prints numbers from that number to 100. You can assume that the user always gives a number less than 100. Below are some examples of the wanted functionality.
+
+```console
+> 99
+99
+100
+```
+
+```console
+> -4
+-4
+-3
+-2
+-1
+0
+1
+... (lots of numbers in between) ...
+98
+99
+100
+```
+
+### NOTICE!
+From now on, the exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise**. Each section is counted separately, when calculating the total amount of exercises done. For example, an exercise with 2 sections, counts as 2 exercises in the total sum you have done.
+
+Hint: The last section always shows what the program should do in total. When all the tests pass, you have done all the sections.
+
+#### Exercise_47
+
+##### Section 1
+* Write a program, which prints integers from 1 to a number given by the user.
+
+```console
+Where to? 
+>3 
+1 
+2 
+3
+```
+
+```console
+Where to? 
+>5 
+1 
+2 
+3 
+4 
+5
+```
+
+Hint: the number read from the user is now the upper limit of the condition. Remember that **a <= b** means a is smaller or equal to b.
+
+##### Section 2
+
+* Ask the user for the starting point as well.
+
+```console
+Where to? 
+>8 
+Where from? 
+>5
+5 
+6 
+7 
+8
+```
+
+If the upper limit is larger than the starting point, nothing is printed:
+
+```
+Where to? 
+> 12 
+Where from? 
+> 16
+```
+
+Hint: Remember that the lower and the upper limits can be negative!
+
+#### Exercise_48
+
+##### Section 1
+
+* Implement a program that asks the user for numbers(the program first prints "Write numbers: ") until the user gives the number -1, When the user writes -1, the program prints "Thx! Bye!" and ends.
+
+```console
+Give numbers: 
+> 5 
+> 2 
+> 4 
+> -1 
+Thx! Bye!
+```
+
+##### Section 2
+
+* Extend the program so, that it prints the sum of the numbers (not including the -1) the user has written.
+
+```console
+Give numbers: 
+> 5 
+> 2 
+> 4 
+> -1 
+Thx! Bye! 
+Sum: 11
+```
+
+##### Section 3 
+* Extend the program so, that it also prints the number of numbers (not including the -1) the user has written.
+
+```console
+Give numbers: 
+> 5 
+> 2 
+> 4 
+> -1 
+Thx! Bye! 
+Sum: 11
+Numbers: 3
+```
+
+##### Section 4
+
+* Extend the program so, that it prints the mean of the numbers (not including the -1) the user has written.
+
+```console
+Give numbers: 
+> 5 
+> 2 
+> 4 
+> -1 
+Thx! Bye! 
+Sum: 11
+Numbers: 3
+Average: 3.666666666666
+```
+
+##### Section 5
+
+* Extend the program so that it prints the number of even and odd numbers (excluding the -1).
+
+```console
+Give numbers: 
+> 5 
+> 2 
+> 4 
+> -1 
+Thx! Bye! 
+Sum: 11
+Numbers: 3
+Average: 3.666666666666
+Even: 2
+Odd: 1
+```
+
+### NOTICE!
+When you are writing a program, whether it's an exercise or a personal project, figure out the types of parts the program needs to function and proceed by implementing them one part at a time. Make sure to test the program right after implementing each part.
+
+Never try solving the whole problem at once, because that makes running and testing the program in the middle of the problem-solving process difficult. Start with something easy that you know you can do. When one part works, you can move on to the next.
+
+Some of the exercises are already split into parts. However, it's often the case in programming that these parts need to be split into even smaller parts. You should almost always run the program after every new line of code. This ensures that the solution is moving in the right direction.
+
+## Methods
+
+#### Exercise_49
+
+##### Section 1
+
+* Create a method called **PrintPhrase** which prints the phrase "In a hole in the ground there lived a method" and a newline.
+
+```cs
+public static void Main(string[] args)
+{
+  // Call your method here:
+  PrintPhrase();
+
+}
+
+// Write your method here:
+public static void PrintPhrase() {
+
+}
+```
+
+```console
+In a hole in the ground there lived a method
+```
+
+##### Section 2
+
+* Expand the previous program so that the main program asks the user for the number of times the phrase will be printed (i.e. how many times the method will be called).
+
+```cs
+public static void Main(string[] args)
+{
+  // ask the user for the number of times that the phrase will be printed
+  // use the while command to call the method a suitable number of times
+
+}
+
+// Write your method here:
+public static void PrintPhrase() {
+
+}
+```
+
+```console
+How many times?
+> 3
+In a hole in the ground there lived a method
+In a hole in the ground there lived a method
+In a hole in the ground there lived a method
+```
+
+## Notice!
+From here on out, when introducing methods, we will not explicitly mention they must be located in the correct place. Methods cannot be defined e.g. inside other methods.
+
+#### Exercise_50
+
+* Expand the method **Sum** in the exercise template so that it calculates and returns the sum of the numbers that are given as the parameters.
+
+Create the method using the following structure:
+
+```cs
+public static int Sum(int number1, int number2, int number3, int number4) {
+  // write your code here
+  // remember to include return (at the end)!
+}
+
+public static void Main(String[] args) {
+    int answer = Sum(4, 3, 6, 1);
+    Console.WriteLine("Sum: " + answer);
+}
+```
+
+Output of the example:
+
+```console
+14
+```

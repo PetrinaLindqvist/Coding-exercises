@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_15;
+using exercise_45;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise15()
+    public void TestExercise45Test1()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -20,14 +20,9 @@ namespace ProgramTests
         // Redirect standard output to variable.
         Console.SetOut(sw);
 
-        Console.SetOut(sw);
-
         var data = String.Join(Environment.NewLine, new[]
         {
-                "word",
-                "12",
-                Convert.ToDouble("3.2", System.Globalization.CultureInfo.InvariantCulture).ToString(),
-                "true"
+                "7"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -37,10 +32,19 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
-        // Assert
-        Assert.AreEqual("Give a string:\nGive an integer:\nGive a double:\nGive a boolean:\nYour string: word\nYour integer: 12\nYour double: "+ (3.2).ToString().Replace(",",".") +"\nYour boolean: True\n", sw.ToString().Replace(",",".").Replace("\r\n", "\n"), "Remember to ask for all the variables");
+        string comparison = "0\n1\n2\n3\n4\n5\n6\n7\n";
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Did you print all the numbers?");
       }
     }
+
+        [Test]
+        public void TestCountWriteLines()
+        {
+            string code = File.ReadAllText("../../../Program.cs");
+            int count = Regex.Matches(code, "Console.WriteLine").Count;
+
+            Assert.AreEqual(1, count, "You were supposed to use Console.WriteLine only once!. Are you truly looping?");
+        }
+
   }
 }

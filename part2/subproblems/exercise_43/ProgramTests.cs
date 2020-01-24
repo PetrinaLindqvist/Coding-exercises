@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_13;
+using exercise_43;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise13()
+    public void TestExercise43Test1()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -20,11 +20,9 @@ namespace ProgramTests
         // Redirect standard output to variable.
         Console.SetOut(sw);
 
-        Console.SetOut(sw);
-
         var data = String.Join(Environment.NewLine, new[]
         {
-                Convert.ToDouble("12.4", System.Globalization.CultureInfo.InvariantCulture).ToString()
+                "2"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -34,14 +32,13 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
-        // Assert
-        Assert.AreEqual("Give a number!\nYou gave "+ (12.4).ToString().Replace(",",".") +"\n", sw.ToString().Replace("\r\n", "\n"), "Remember to ask for a number and print it with \"You gave...\" ");
+        string comparison = "2\n";
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Positive number should return itself!");
       }
     }
 
     [Test]
-    public void TestExercise13Second()
+    public void TestExercise43Test2()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -51,11 +48,9 @@ namespace ProgramTests
         // Redirect standard output to variable.
         Console.SetOut(sw);
 
-        Console.SetOut(sw);
-
         var data = String.Join(Environment.NewLine, new[]
         {
-                Convert.ToDouble("3.4", System.Globalization.CultureInfo.InvariantCulture).ToString()
+                "4"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -65,11 +60,43 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
+        string comparison = "4\n";
+        
         // Assert
-        Assert.AreEqual("Give a number!\nYou gave "+ (3.4).ToString().Replace(",",".") +"\n", sw.ToString().Replace("\r\n", "\n"), "Remember to ask for a number and print it with \"You gave...\" ");
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Positive numbers should return themselves!");
       }
     }
+
+    [Test]
+    public void TestExercise43Test3()
+    {
+      using (StringWriter sw = new StringWriter())
+      {
+        // Save a reference to the standard output.
+        TextWriter stdout = Console.Out;
+
+        // Redirect standard output to variable.
+        Console.SetOut(sw);
+
+        var data = String.Join(Environment.NewLine, new[]
+        {
+                "-3"
+                });
+
+        Console.SetIn(new System.IO.StringReader(data));
+
+        // Call student's code
+        Program.Main(null);
+
+        // Restore the original standard output.
+        Console.SetOut(stdout);
+        string comparison = "3\n";
+        
+        // Assert
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Negative numbers should be multiplied with -1!");
+      }
+    }
+
 
   }
 }
