@@ -9,6 +9,9 @@ namespace exercise_06
             Console.WriteLine("Give input!");
             // Write your code here:
             
+            string Hello = Console.ReadLine();
+            
+            Console.WriteLine(Hello);
         }
     }
 }
