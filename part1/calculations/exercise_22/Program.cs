@@ -16,7 +16,7 @@ namespace exercise_22
       string numBer2 = Console.ReadLine();
       int second = Convert.ToInt32(numBer2);
     
-      Console.WriteLine("Give the second number!");
+      Console.WriteLine("Give the third number!");
       string numBer3 = Console.ReadLine();
       int third = Convert.ToInt32(numBer3);
       
