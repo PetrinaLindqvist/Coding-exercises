@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_50;
+using exercise_57;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -13,9 +13,9 @@ namespace ProgramTests
     public void TestFindMethodName()
     {
       string code = File.ReadAllText("../../../Program.cs");
-      int count = Regex.Matches(code, "public static void PrintPhrase").Count;
+      int count = Regex.Matches(code, "public static int Sum").Count;
 
-      Assert.AreEqual(1, count, "You were supposed to create your own method!");
+      Assert.AreEqual(1, count, "You were supposed to use the method base!");
     }
 
     [Test]
@@ -24,21 +24,21 @@ namespace ProgramTests
       string code = File.ReadAllText("../../../Program.cs");
       int count = Regex.Matches(code, "Console.WriteLine").Count;
 
-      Assert.AreEqual(2, count, "You were supposed to use WriteLine inside the method!");
+      Assert.AreEqual(1, count, "You were NOT supposed to use WriteLine inside the method!");
     }
 
-    [Test]
+        [Test]
     public void TestFindMethodCall()
     {
       string code = File.ReadAllText("../../../Program.cs");
-      int count = Regex.Matches(code, "PrintPhrase()").Count;
+      int count = Regex.Matches(code, "Sum[^:]").Count;
 
-      Assert.AreEqual(2, count, "You were supposed to call PrintPhrase(); from your Main!");
+      Assert.AreEqual(2, count, "You were supposed to call Sum from your Main!");
     }
 
 
     [Test]
-    public void TestExercise50More()
+    public void TestExercise57Main()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -48,23 +48,29 @@ namespace ProgramTests
         // Redirect standard output to variable.
         Console.SetOut(sw);
 
-        var data = String.Join(Environment.NewLine, new[]
-        {
-                "3"
-                });
-
-        Console.SetIn(new System.IO.StringReader(data));
-
         // Call student's code
         Program.Main(null);
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-        string comparison = "How many times?\nIn a hole in the ground there lived a method\nIn a hole in the ground there lived a method\nIn a hole in the ground there lived a method\n";
-        
+
         // Assert
-        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Print as many times as asked!");
+        Assert.AreEqual("Sum: 14\n", sw.ToString().Replace("\r\n", "\n"), "Check your code! The test requires exact match for printing!");
       }
+
+    }
+
+    [Test]
+    public void TestExercise57MethodSum()
+    {
+      using (StringWriter sw = new StringWriter())
+      {
+        int count = Program.Sum(1,2,3,4);
+
+        // Assert
+        Assert.AreEqual(10, count);
+      }
+
     }
 
   }

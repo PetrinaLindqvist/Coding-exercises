@@ -1,18 +1,16 @@
 ﻿using System;
 
-namespace exercise_50
+namespace exercise_54
 {
   class Program
   {
-    public static void Main(string[] args)
+    public static void Main(String[] args)
     {
       // Call your method here:
- 
+
     }
 
     // Write your method here:
-    public static void PrintPhrase() {
 
-    }
   }
 }
