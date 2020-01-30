@@ -1017,7 +1017,7 @@ In these exercises we practice making and calling our own methods.
 
 #### Exercise_49
 
-* Create a method called **PrintPhrase** which prints the phrase "In a hole in the ground there lived a method" and a newline.
+* Create a method called **PrintPhrase** which prints the phrase "In a hole in the ground there lived a method" and a newline (use WriteLine and not just Write).
 
 ```cs
 public static void Main(string[] args)
@@ -1224,10 +1224,10 @@ Smallest: 2
 
 #### Exercise_59
 
-* Define a three-parameter method **Greatest** that returns the smaller of the two numbers passed to it as parameters.
+* Define a three-parameter method **Greatest** that returns the greatest of the three numbers passed to it as parameters.
 
 ```cs
-public static int Greatest(int number1, int number2) 
+public static int Greatest(int number1, int number2, int number3) 
 {
   // write your code here
   // do not print anything inside the method
