@@ -9,13 +9,14 @@ namespace exercise_50
       // Call your method here:
       Console.WriteLine("How many times?");
       int times = Convert.ToInt32(Console.ReadLine());
-      int i = 0;
-    }
-    while (i < times);
+      int count = 0;
+    
+    while (count < times)
     {
       
       PrintPhrase();
-      i++;
+      count++;
+    }
     }
     // Write your method here:
     public static void PrintPhrase() 
@@ -23,4 +24,5 @@ namespace exercise_50
       Console.WriteLine("In a hole in the ground there lived a method");
     }
   }
-}
+ }
+
