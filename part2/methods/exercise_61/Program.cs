@@ -20,9 +20,11 @@ namespace exercise_61
     }
     public static void PrintSpaces(int number)
     {
-    
+      for (int i = 0; i < number; i++)
+    {
+      Console.Write(" ");
     }
-
+    }
     public static void PrintRightTriangle(int size)
     {
       int left = size -1;
