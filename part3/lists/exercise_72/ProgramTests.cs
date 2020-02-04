@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_69;
+using exercise_72;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise69Once()
+    public void TestExercise72Once()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -24,9 +24,7 @@ namespace ProgramTests
                 "345",
                 "123",
                 "1",
-                "-1",
-                "2",
-                "15"
+                "9999"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -36,12 +34,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        Assert.AreEqual("From where?\nWhere to?\n12\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use print all the numbers from between!");
+        Assert.AreEqual("Smallest number: 1\nFound at index: 3\n", sw.ToString().Replace("\r\n", "\n"), "Did you really search the list?");
       }
     }
 
     [Test]
-    public void TestExercise69Twice()
+    public void TestExercise72Twice()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -54,15 +52,14 @@ namespace ProgramTests
                 "12",
                 "11",
                 "10",
-                "-2",
+                "20",
                 "3",
-                "34",
-                "-11",
+                "42",
+                "999911",
                 "11",
+                "3",
                 "12",
-                "-1",
-                "1",
-                "10"
+                "9999"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -72,12 +69,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n10\n3\n", sw.ToString().Replace("\r\n", "\n"), "Remember to print all the numbers from chosen area!");
+        StringAssert.Contains("Smallest number: 3\nFound at index: 4\nFound at index: 8\n", sw.ToString().Replace("\r\n", "\n"), "Multiple occurences mean multiple prints!");
       }
     }
 
     [Test]
-    public void TestExercise69Single()
+    public void TestExercise72Single()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -87,10 +84,11 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "-1",
-                "0",
-                "0",
-                "\n"
+                "2",
+                "3",
+                "2",
+                "2",
+                "9999"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -100,7 +98,7 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n", sw.ToString().Replace("\r\n", "\n"), "Empty list should not return any numbers!");
+        StringAssert.Contains("Smallest number: 2\nFound at index: 0\nFound at index: 2\nFound at index: 3\n", sw.ToString().Replace("\r\n", "\n"), "Remember to check the whole list!");
       }
     }
   }

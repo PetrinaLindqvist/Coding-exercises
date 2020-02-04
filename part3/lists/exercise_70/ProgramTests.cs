@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_69;
+using exercise_70;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise69Once()
+    public void TestExercise70Once()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -24,9 +24,7 @@ namespace ProgramTests
                 "345",
                 "123",
                 "1",
-                "-1",
-                "2",
-                "15"
+                "-1"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -36,12 +34,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        Assert.AreEqual("From where?\nWhere to?\n12\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use print all the numbers from between!");
+        Assert.AreEqual("The greatest number: 345\n", sw.ToString().Replace("\r\n", "\n"), "Remember to find the greatest!!");
       }
     }
 
     [Test]
-    public void TestExercise69Twice()
+    public void TestExercise70Twice()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -56,13 +54,11 @@ namespace ProgramTests
                 "10",
                 "-2",
                 "3",
-                "34",
-                "-11",
+                "42",
+                "-111",
                 "11",
                 "12",
-                "-1",
-                "1",
-                "10"
+                "-1"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -72,12 +68,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n10\n3\n", sw.ToString().Replace("\r\n", "\n"), "Remember to print all the numbers from chosen area!");
+        StringAssert.Contains("The greatest number: 42\n", sw.ToString().Replace("\r\n", "\n"), "Remember to check which is the greatest!");
       }
     }
 
     [Test]
-    public void TestExercise69Single()
+    public void TestExercise70Single()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -87,10 +83,8 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "-1",
-                "0",
-                "0",
-                "\n"
+                "2",
+                "-1"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -100,7 +94,7 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n", sw.ToString().Replace("\r\n", "\n"), "Empty list should not return any numbers!");
+        StringAssert.Contains("The greatest number: 2\n", sw.ToString().Replace("\r\n", "\n"), "Only one number, should be easy!");
       }
     }
   }

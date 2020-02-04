@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_69;
+using exercise_74;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise69Once()
+    public void TestExercise74Once()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -20,13 +20,12 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "12",
-                "345",
-                "123",
-                "1",
-                "-1",
-                "2",
-                "15"
+                "moist",
+                "hot potato",
+                "truest",
+                "false",
+                "",
+                "false"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -36,12 +35,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        Assert.AreEqual("From where?\nWhere to?\n12\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use print all the numbers from between!");
+        Assert.AreEqual("Search for?\nfalse was found!\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use Contains!");
       }
     }
 
     [Test]
-    public void TestExercise69Twice()
+    public void TestExercise74Twice()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -51,18 +50,17 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "12",
-                "11",
-                "10",
-                "-2",
-                "3",
-                "34",
-                "-11",
-                "11",
-                "12",
-                "-1",
-                "1",
-                "10"
+                "word",
+                "hot potato",
+                "moneyshot",
+                "false",
+                "count all",
+                "the strings",
+                "from the list",
+                "with the property",
+                "I am last",
+                "",
+                "mr fantastic"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -72,12 +70,12 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n10\n3\n", sw.ToString().Replace("\r\n", "\n"), "Remember to print all the numbers from chosen area!");
+        StringAssert.Contains("Search for?\nmr fantastic was not found!\n", sw.ToString().Replace("\r\n", "\n"), "Remember to also tell if not found!");
       }
     }
 
     [Test]
-    public void TestExercise69Single()
+    public void TestExercise74Single()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -87,10 +85,10 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "-1",
-                "0",
-                "0",
-                "\n"
+                "First",
+                "Second",
+                "",
+                "Third"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -100,7 +98,7 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        StringAssert.Contains("From where?\nWhere to?\n", sw.ToString().Replace("\r\n", "\n"), "Empty list should not return any numbers!");
+        StringAssert.Contains("Search for?\nThird was not found!\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use Contains!");
       }
     }
   }

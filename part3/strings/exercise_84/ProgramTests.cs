@@ -1,8 +1,9 @@
 using System;
 using System.IO;
-using exercise_69;
+using exercise_84;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace ProgramTests
 {
@@ -10,98 +11,88 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise69Once()
+    public void TestExercise84Cake()
     {
       using (StringWriter sw = new StringWriter())
       {
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "12",
-                "345",
-                "123",
-                "1",
-                "-1",
-                "2",
-                "15"
+                "cake"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
 
+        // Call student's code
         Program.Main(null);
 
+        // Restore the original standard output.
         Console.SetOut(stdout);
-
-        // Assert
-        Assert.AreEqual("From where?\nWhere to?\n12\n", sw.ToString().Replace("\r\n", "\n"), "Remember to use print all the numbers from between!");
+        string comparison = "Give a string: Try again!\n";
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Only true should pass!");
       }
     }
 
     [Test]
-    public void TestExercise69Twice()
+    public void TestExercise84Ord()
     {
       using (StringWriter sw = new StringWriter())
       {
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "12",
-                "11",
-                "10",
-                "-2",
-                "3",
-                "34",
-                "-11",
-                "11",
-                "12",
-                "-1",
-                "1",
-                "10"
+                "ord"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
 
+        // Call student's code
         Program.Main(null);
 
+        // Restore the original standard output.
         Console.SetOut(stdout);
-
-        // Assert
-        StringAssert.Contains("From where?\nWhere to?\n10\n3\n", sw.ToString().Replace("\r\n", "\n"), "Remember to print all the numbers from chosen area!");
+        string comparison = "Give a string: Try again!\n";
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Only true should pass!");
       }
     }
 
     [Test]
-    public void TestExercise69Single()
+    public void TestExercise84True()
     {
       using (StringWriter sw = new StringWriter())
       {
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "-1",
-                "0",
-                "0",
-                "\n"
+                "true"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
 
+        // Call student's code
         Program.Main(null);
 
+        // Restore the original standard output.
         Console.SetOut(stdout);
-
-        // Assert
-        StringAssert.Contains("From where?\nWhere to?\n", sw.ToString().Replace("\r\n", "\n"), "Empty list should not return any numbers!");
+        string comparison = "Give a string: You got it right!\n";
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Print the input three times!");
       }
     }
+
   }
 }
