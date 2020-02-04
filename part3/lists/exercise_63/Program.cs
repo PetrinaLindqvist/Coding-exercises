@@ -19,7 +19,7 @@ namespace exercise_63
 
         list.Add(input);
       }
-      Console.WriteLine(list[0]);
+      Console.WriteLine(list[1] + list[2]);
     }
 
   }
