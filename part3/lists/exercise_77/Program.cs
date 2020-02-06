@@ -21,12 +21,12 @@ namespace exercise_77
 
         strings.ForEach(Console.WriteLine);
 
-        {
-        public static void RemoveLast(List<string> strings)
         }
+        public static void RemoveLast(List<string> strings)
+        {
         
-        int last = strings.Count -1
-        string.RemoteA
+        int Last = strings.Count -1;
+        strings.RemoveAt(Last);
         {
             
         }
