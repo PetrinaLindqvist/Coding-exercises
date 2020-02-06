@@ -18,7 +18,7 @@ namespace exercise_73
         list.Add(input);
       }
       
-      foreach (int sum =
+      foreach (int number in list)
     {
       Console.WriteLine
     } 
