@@ -19,19 +19,14 @@ namespace exercise_82
        for (int i = 0; i < array.Length; i++)
        {
 
-                if (i < array.Length - 1)
+                for (int num = 0; num < array[i]; num++)
                 {
-
-                    Console.Write(array[i] + ", ");
+                    Console.Write("*");
                 }
-                else
-                {
-                    Console.Write(array[i]);
-                }
-                
-            }
-          Console.WriteLine();
-    }
+                    Console.WriteLine();
+       }            
+    
+    }     
   }
 }
 
