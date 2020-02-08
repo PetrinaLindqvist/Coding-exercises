@@ -14,9 +14,19 @@ namespace exercise_82
     }
 
     public static void PrintArrayInStars(int[] array)
+    
     {
+       for (int i = 0; i < array.Length; i++)
+       {
 
-    }
+                for (int num = 0; num < array[i]; num++)
+                {
+                    Console.Write("*");
+                }
+                    Console.WriteLine();
+       }            
+    
+    }     
   }
 }
 
