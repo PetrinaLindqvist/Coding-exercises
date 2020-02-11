@@ -10,7 +10,7 @@ namespace exercise_103
       Console.WriteLine(bond);
 
       Agent bourne = new Agent("Jason", "Bourne");
-      Console.WriteLine(bond);
+      Console.WriteLine(bourne);
     }
   }
 }
