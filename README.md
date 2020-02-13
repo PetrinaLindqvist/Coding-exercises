@@ -2258,7 +2258,7 @@ Create a class **Product** that represents a store product. The product should h
 
 The class should have:
 
-- the constructor **public Product (string name, double price, int quantity)**
+- the constructor **public Product(string name, double price, int quantity)**
 - a method **public void PrintProduct()** that prints product information in the following format:
 
 ```console
@@ -2500,7 +2500,7 @@ Create a class **Multiplier** that has a:
 
 Constructor **public Multiplier(int number)**.
 Method **public int Multiply(int number)** which returns the value number passed to it multiplied by the number provided to the constructor.
-You also need to create an instance variable in this exercise.
+**You also need to create an instance variable in this exercise.** When you call the method Multiply, store the changed value into the instance variable!
 
 An example of the class in use:
 
@@ -2516,6 +2516,7 @@ public static void Main(string[] args)
   Console.WriteLine("multiplyByFour.Multiply(2): " + multiplyByFour.Multiply(2));
   Console.WriteLine("multiplyByThree.Multiply(1): " + multiplyByThree.Multiply(1));
   Console.WriteLine("multiplyByFour.Multiply(1): " + multiplyByFour.Multiply(1));
+  Console.WriteLine("multiplyByFour.Multiply(3): " + multiplyByFour.Multiply(3));
 }
 ```
 
@@ -2524,7 +2525,16 @@ multiplyByThree.Multiply(2): 6
 multiplyByFour.Multiply(2): 8
 multiplyByThree.Multiply(1): 6
 multiplyByFour.Multiply(1): 8
+multiplyByFour.Multiply(3): 24
 ```
+
+NOTICE! The value stored in the objects is changed during the first calls!  
+The calculations are actually ( in order):  
+3 * 2 = 6  
+4 * 2 = 8  
+6 * 1 = 6  
+8 * 1 = 8  
+8 * 3 = 24
 
 #### Exercise_105
 
@@ -2722,6 +2732,8 @@ Write a program that reads names of items from the user. If the name is empty, t
 
 Having read all the names, print all the items by using the ToString method of the Item class. The implementation of the Item class keeps track of the time of creation, in addition to the name of the item.
 
+NOTICE! The list has to be called "items" for the tests to work!
+
 Example print:
 ```console
 Name: Hammer
@@ -2879,13 +2891,13 @@ Write a program that reads strings from the user until the user inputs the strin
 
 #### Exercise_115
 
-Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number _ number _ number). Below are some sample outputs
+Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number * number * number). Below are some sample outputs
 
 ```console
 > 3 
 27 
 > -1 
-1 
+-1 
 > 11 
 1331 
 > end
@@ -2903,8 +2915,8 @@ Write a program that prints the contents of a file called "data.txt", such that 
 
 If the file content looks like so:
 
-In a world
-Where code is built
+In a world   
+Where code is built   
 
 Then the program should print the following:
 
