@@ -9,7 +9,7 @@ namespace exercise_98
         private int quantity;
         
 
-        public Product (string name, double price, int quantity)
+        public Product(string name, double price, int quantity)
         {
             this.name = name;
             this.price = price;
@@ -18,7 +18,7 @@ namespace exercise_98
 
         public void PrintProduct()
         {
-            Console.WriteLine(name + ":" + " price " + price + ": " + quantity + " pcs");
+            Console.WriteLine(this.name + ":" + " price " + this.price + ": " + this.quantity + " pcs");
         }
                     
         
