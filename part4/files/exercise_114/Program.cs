@@ -6,7 +6,21 @@ namespace exercise_114
     {
         public static void Main(string[] args)
         {
+        int count = 0;
+            while (true)
+            {
+                string anything = Console.ReadLine();
 
+                if (anything == "end")
+                {
+                    break;
+                }
+                count++; 
+        
+
+                }
+                Console.WriteLine(count);
         }
+
     }
 }
