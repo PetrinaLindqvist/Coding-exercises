@@ -1434,7 +1434,7 @@ Modify the program so that instead of the first value, the program prints the su
 
 #### Exercise_64
 
-There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error ArgumentOutRangeException. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
+There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error **ArgumentOutRangeException**. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
 
 #### Exercise_65
 
@@ -2817,19 +2817,19 @@ Example of how the program in Main should work:
 
 ```console
 
-Title: To Kill a Mockingbird 
+Name: To Kill a Mockingbird 
 Pages: 281 
 Publication year: 1960 
-Title: A Brief History of Time 
+Name: A Brief History of Time 
 Pages: 256 
 Publication year: 1988 
-Title: Beautiful Code 
+Name: Beautiful Code 
 Pages: 593 
 Publication year: 2007 
-Title: The Name of the Wind 
+Name: The Name of the Wind 
 Pages: 662 
 Publication year: 2007 
-Title:
+Name:
 
 What information will be printed? everything 
 To Kill a Mockingbird, 281 pages, 1960 
@@ -2839,19 +2839,19 @@ The Name of the Wind, 662 pages, 2007
 ```
 
 ```console
-Title: To Kill a Mockingbird 
+Name: To Kill a Mockingbird 
 Pages: 281 
 Publication year: 1960 
-Title: A Brief History of Time 
+Name: A Brief History of Time 
 Pages: 256 
 Publication year: 1988 
-Title: Beautiful Code 
+Name: Beautiful Code 
 Pages: 593 
 Publication year: 2007 
-Title: The Name of the Wind 
+Name: The Name of the Wind 
 Pages: 662 
 Publication year: 2007 
-Title:
+Name:
 
 What information will be printed? title 
 To Kill a Mockingbird 
@@ -2992,3 +2992,505 @@ alicia
 mike  
 potato  
   
+# Part 5
+
+## Object oriented revision
+
+#### Exercise_119
+
+The exercise template comes with the **"ClockHand"** class described in the course material. Implement a **Timer** class based on the material's Clock class.
+
+The timer has two hands, one for hundredths of a second and one for seconds. As it progresses, the number of hundredths of a second grows by one. When the hand corresponding to hundredths of a second reaches a value of 100, its value is set to zero, and the number of seconds grows by one. In the same way, when the value of the hand corresponding to seconds reaches the value of sixty, its value is set to zero.
+
+- **public Timer()** creates a new timer.
+- **public override string ToString()** returns a string representation of the timer. The string representation should be in the form "seconds: hundredths of a second", where both the seconds and the hundredths of a second are represented by two numbers. For example, **"19:83"** would represent the time 19 seconds, 83 hundredths of a second.
+- **public void Advance()** moves the timer forward by a hundredth of a second.
+
+You can test out the timer's functionality in the main program whenever you like. The example code below provides you with a program where the timer is printed and it advances once every hundredth of a second.
+
+```cs
+static void Main(string[] args)
+{
+  // Create new timer
+  Timer timer = new Timer();
+  // Loop until you cancel the loop.
+  // You can cancel with the CTRL + C
+  while (true)
+  {
+    Console.WriteLine(timer);
+    timer.Advance();
+    // Some error proving, we'll talk about this later.
+    // Known as try-catch.
+    try
+    {
+      // Wait 100th of a second. 
+      // Sleep(1000) waits one second, if you want to test at slower pace.
+      System.Threading.Thread.Sleep(10);
+    }
+    // Other half of try-catch pair. 
+    catch (Exception e)
+    {
+      Console.WriteLine("Error happened: +" + e);
+    }
+  }
+}
+```
+
+#### Exercise_120
+
+Create a **Cube** class that represents a cube (i.e., a standard hexahedron). Create a **public Cube (int edgeLength)** constructor for the class, that takes the length of the cube's edge as its parameter.
+
+Make a **public int Volume()** method for the cube, which calculates and returns the cube's volume. The volume of the cube is calculated with the formula **edgeLength * edgeLength * edgeLength**. Moreover, make a **public override string ToString()** method for the cube, which returns a string representation of it. The string representation should take the form **"The length of the edge is l and the volume v"**, where l is the length and v the volume - both the length and volume must be represented as integers.
+
+#### Exercise_121
+
+[**The Karvonen method**](https://en.wikipedia.org/wiki/Heart_rate#Karvonen_method) allows you to calculate your target heart rate for physical exercise. The target heart rate is calculated with the formula **(maximum heart rate - resting heart rate) * (target heart rate percentage) + resting heart rate**, where the target heart rate is given as a percentage of the maximum heart rate.
+
+For example, if a person has a maximum heart rate of 200, a resting heart rate of 50, and a target heart rate of 75% of the maximum heart rate, the target heart rate should be about ((200-50) * (0.75) + 50), i.e., 162.5 beats per minute.
+
+Create an "exercise assistant" class called **Fitbyte**. Its constructor takes both an age and a resting heart rate as its parameters. The exercise assistant should provide a method **TargetHeartRate**, which is passed a number of type double as a parameter that represents a percentual portion of the maximum heart rate. The proportion is given as a number between zero and one. The class should have:
+
+- A constructor **public Fitbyte(int age, int restingHeartRate)**
+- A method **public double TargetHeartRate(double percentageOfMaximum)** that calculates and returns the target heart rate.
+
+Use the formula **206.3 - (0.711 * age)** to calculate the maximum heart rate.
+Use the formula **(maxHeartRate - restingHeartRate) * percentageOfMaximum + restingHeartRate** to calculate the target heart rate.
+
+Use case:
+
+```cs
+public static void Main(string[] args)
+{
+  Fitbyte assistant = new Fitbyte(30, 60);
+  double percentage = 0.5;
+
+  while (percentage < 1.0)
+  {
+    double target = assistant.TargetHeartRate(percentage);
+    Console.WriteLine("Target " + (percentage * 100) + "% of maximum: " + target);
+    percentage = percentage + 0.1;
+  }
+}
+```
+
+```console
+Target 50% of maximum: 122.48500000000001
+Target 60% of maximum: 134.98200000000003
+Target 70% of maximum: 147.479
+Target 80% of maximum: 159.976
+Target 89.99999999999999% of maximum: 172.473
+Target 99.99999999999999% of maximum: 184.97000000000003
+```
+
+
+## Overloading
+
+#### Exercise_122
+
+The exercise template has a class Product, which represents a product in a shop. Every product has a name, location and weight.
+
+Add the following three constructors to the Product class:
+
+- **public Product(string name)** creates a product with the given name. Its location is set to "shelf" and its weight is set to 1.
+- **public Product(string name, string location)** creates a product with the given name and the given location. Its weight is set to 1.
+- **public Product(string name, int weight)** creates a product with the given name and the given weight. Its location is set to "warehouse".
+You can test your program with the following code:
+
+```cs
+Product tapeMeasure = new Product("Tape measure");
+Product plaster = new Product("Plaster", "home improvement section");
+Product tyre = new Product("Tyre", 5);
+
+Console.WriteLine(tapeMeasure);
+Console.WriteLine(plaster);
+Console.WriteLine(tyre);
+```
+
+```console
+Tape measure (1 kg) can be found from the shelf. 
+Plaster (1 kg) can be found from the home improvement section. 
+Tyre (5 kg) can be found from the warehouse.
+```
+
+#### Exercise_123
+
+Implement a class called **Counter**. The class contains a number, whichs value can be increased and decreased. The class must have the following constructors:
+
+- **public Counter(int startValue)** sets the start value of the counter to startValue.
+
+- **public Counter()** sets the start value of the counter to 0.
+
+And the following methods and properties:
+
+- **public int value { get; set; }**
+- **public void Increase()** increases the value by 1
+- **public void Decrease()** decreases the value by 1
+- **public void Increase(int increaseBy)** increases the value of the counter by the value of increaseBy. If the value of increaseBy is negative, the value of the counter does not change.
+- **public void Decrease(int decreaseBy)** decreases the value of the counter by the value of decreaseBy. If the value of decreaseBy is negative, the value of the counter does not change.
+
+## Objects and references
+
+#### Exercise_124
+
+Implement a program that causes the **NullReferenceException** error. The error should occur directly after starting the program -- don't wait to read input from the user, for instance.
+
+HINT! Change an object into null, and try to use it.
+
+#### Exercise_125
+
+In the exercise base there is the class **Person**, which we are already quite familiar with. There is also an outline for the class **HealthStation**. Health station objects process people in different ways, they e.g. weigh and feed people. In this exercise we will construct a health station. The code of the Person class should not be modified in this exercise!
+
+
+##### Section 1 - Weighing people
+
+The **Weigh** method receives a person as a parameter, and it is meant to return to its caller the weight of that person. The weight information can be found by calling a suitable property of the Person person. So your task is to complete the code of the method!
+
+##### Section 2 - Feeding people
+
+It is possible to modify the state of the object that is received as a parameter. Fill in the method called **public void Feed(Person person)** for the health station. It should increase the weight of the parameter person by one.
+
+##### Section 3 - Counting weighings
+
+Use the variable **public int weighings { get; private set; }** to count weighings - That is, when ever the method **Weigh** is called, the variable should increase by one.
+
+Here's a Main class to test all of the sections:
+
+```cs
+public static void Main(string[] args)
+{
+  // Create new Station
+  HealthStation childrensHospital = new HealthStation();
+
+  // Create two new persons
+  Person ethan = new Person("Ethan", 1, 110, 7);
+  Person peter = new Person("Peter", 33, 176, 85);
+
+  // Try out the Persons and method Weigh
+  Console.WriteLine(ethan.name + " weight: " + childrensHospital.Weigh(ethan) + " kilos");
+  Console.WriteLine(peter.name + " weight: " + childrensHospital.Weigh(peter) + " kilos");
+
+  // Test feeding the persons
+  childrensHospital.Feed(ethan);
+  childrensHospital.Feed(peter);
+
+  // See that the weights have changed
+  Console.WriteLine(ethan.name + " weight: " + childrensHospital.Weigh(ethan) + " kilos");
+  Console.WriteLine(peter.name + " weight: " + childrensHospital.Weigh(peter) + " kilos");
+
+  // Keep weighing to increase the 'int weighings'
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+
+  // See that the variable has increased to 8
+  Console.WriteLine("weighings performed: " + childrensHospital.weighings);
+}
+```
+
+Should print out 
+
+```console
+Ethan weight: 110 kilos
+Peter weight: 176 kilos
+Ethan weight: 111 kilos
+Peter weight: 177 kilos
+weighings performed: 8
+```
+
+#### Exercise_126
+
+In a previous exercises part we created a class called **PaymentCard**. The card had methods for eating a lunch and drinking coffee, and also for adding money to the card.
+
+However, there was a problem with the **PaymentCard** class that is implemented in this fashion. The card knew the prices of the different payments, and therefore was able to decrease the balance by the proper amount. What about if the prices are raised? Or new items are added to the list of offered products? A change in the pricing would mean that all the existing cards would have to be replaced with new cards that are aware of the new prices.
+
+An improved solution is to make the cards "dumb"; unaware of the prices and products that are sold, and only keeping track of their balance. All the intelligence is better placed in separate objects, payment terminals.
+
+
+##### Section 1
+
+Let's first implement the **"dumb" version of the PaymentCard**. The card only has ability for asking for the balance, adding money, and taking money. Complete the method **public bool TakeMoney(double amount)** in the class below (and found in the exercise template), using the following as a guide:
+
+```cs
+namespace exercise_126
+{
+  public class PaymentCard
+  {
+    public double balance { get; private set; }
+
+    public PaymentCard(double balance)
+    {
+      this.balance = balance;
+    }
+
+    public void AddMoney(double increase)
+    {
+      this.balance = this.balance + increase;
+    }
+
+    public bool TakeMoney(double amount)
+    {
+      // implement the method so that it only takes money from the card if
+      // the balance is at least the amount parameter.
+      // returns true if successful and false otherwise
+
+      return false;
+    }
+  }
+}
+```
+Should print like this:
+
+```console
+money 10
+successfully withdrew: True
+money 2
+successfully withdrew: False
+money 2
+```
+
+##### Section 2
+
+When visiting a student cafeteria, the customer pays either with cash or with a payment card. The cashier uses a payment terminal to charge the card or to process the cash payment. First, let's create a terminal that's suitable for cash payments.
+
+The outline of the payment terminal. The comments inside the methods tell the wanted functionality:
+
+```cs
+namespace exercise_126
+{
+  public class PaymentTerminal
+  {
+    private double money;  // amount of cash
+    private int coffeeAmount; // number of sold coffees
+    private int lunchAmount;  // number of sold lunches
+
+    public PaymentTerminal()
+    {
+      // register initially has 1000 euros of money
+    }
+
+    public double DrinkCoffee(double payment)
+    {
+      // an coffee now costs 2.50 euros
+      // increase the amount of cash by the price of an coffee mean and return the change
+      // if the payment parameter is not large enough, no coffee is sold and the method should return the whole payment
+    }
+
+    public double EatLunch(double payment)
+    {
+      // a lunch now costs 10.30 euros
+      // increase the amount of cash by the price of a lunch and return the change
+      // if the payment parameter is not large enough, no lunch is sold and the method should return the whole payment
+    }
+
+    public override string ToString()
+    {
+      return "money: " + money + ", number of sold coffees: " + coffeeAmount + ", number of sold lunches: " + lunchAmount;
+    }
+  }
+}
+```
+
+The terminal starts with 1000 euros in it. Implement the methods so they work correctly, using the basis above and the example prints of the main program below.
+
+```cs
+PaymentTerminal lunchCafeteria = new PaymentTerminal();
+
+double change = lunchCafeteria.DrinkCoffee(10);
+Console.WriteLine("remaining change " + change);
+
+change = lunchCafeteria.DrinkCoffee(5);
+Console.WriteLine("remaining change " + change);
+
+change = lunchCafeteria.EatLunch(20);
+Console.WriteLine("remaining change " + change);
+
+Console.WriteLine(lunchCafeteria);
+```
+
+```console
+remaining change 7.5
+remaining change 2.5
+remaining change 13
+money: 1015.3, number of sold coffees: 2, number of sold lunches: 1
+```
+
+##### Section 3
+
+Let's extend our payment terminal to also support card payments. We are going to create new methods for the terminal. It receives a payment card as a parameter, and decreases its balance by the price of the meal that was purchased. Here are the outlines for the methods, and instructions for completing them.
+
+```cs
+public bool DrinkCoffee(PaymentCard card)
+{
+  // a coffee costs 2.50 euros
+  // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+  // otherwise false is returned
+}
+
+public bool EatLunch(PaymentCard card)
+{
+  // a lunch costs 10.30 euros
+  // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+  // otherwise false is returned
+}
+```
+
+Notice! Card payments do not increase the cash in the register.
+
+```cs
+PaymentTerminal lunchCafeteria = new PaymentTerminal();
+
+double change = lunchCafeteria.DrinkCoffee(10);
+Console.WriteLine("remaining change: " + change);
+
+PaymentCard annesCard = new PaymentCard(15);
+
+bool wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+wasSuccessful = lunchCafeteria.DrinkCoffee(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+
+Console.WriteLine(lunchCafeteria);
+```
+
+```console
+remaining change: 7.5
+there was enough money: True
+there was enough money: False
+there was enough money: True
+money: 1002.5, number of sold coffees: 2, number of sold lunches: 1
+```
+
+##### Section 4
+
+Let's create a method for the terminal that can be used to add money to a payment card. Recall that the payment that is received when adding money to the card is stored in the register (adding cash). The basis for the method:
+
+```cs
+public void AddMoneyToCard(PaymentCard card, double sum)
+{
+  // ...
+}
+```
+
+A main program to illustrate:
+
+
+```cs
+public static void Main(string[] args)
+{
+  // Try your code here, if you want
+
+  PaymentTerminal lunchCafeteria = new PaymentTerminal();
+  Console.WriteLine(lunchCafeteria);
+
+  PaymentCard annesCard = new PaymentCard(2);
+
+  Console.WriteLine("amount of money on the card is " + annesCard.balance + " euros");
+
+  bool wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+  Console.WriteLine("there was enough money: " + wasSuccessful);
+
+  lunchCafeteria.AddMoneyToCard(annesCard, 100);
+
+  wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+  Console.WriteLine("there was enough money: " + wasSuccessful);
+
+  Console.WriteLine("amount of money on the card is " + annesCard.balance + " euros");
+
+  Console.WriteLine(lunchCafeteria);
+}
+```
+
+```console
+money: 1000, number of sold coffees: 0, number of sold lunches: 0
+amount of money on the card is 2 euros
+there was enough money: False
+there was enough money: True
+amount of money on the card is 91.7 euros
+money: 1100, number of sold coffees: 0, number of sold lunches: 1
+```
+
+#### Exercise_127
+
+Two classes, Person and Pet, are included in the exercise template. Each person has one pet. Modify the **public override string ToString** method of the **Person class** so that the string it returns tells the pet's name and breed in addition to the person's own name.
+
+```cs
+public static void Main(string[] args)
+{
+
+  Pet lucy = new Pet("Lucy", "golden retriever");
+  Person leo = new Person("Leo", lucy);
+  Console.WriteLine(leo);
+
+  Person mike = new Person("Mike");
+  Console.WriteLine(mike);
+  
+  Person lilo = new Person();
+  Console.WriteLine(lilo);
+}
+```
+
+```console
+Leo, has a friend called Lucy (golden retriever)
+Lilo, has a friend called Stitch (blue alien)
+Mike, has a friend called Toothless (dragon)
+```
+
+#### Exercise_128
+
+Fill in the method **public bool LargerThan(Apartment compared)** that returns true if the apartment object whose method is called has a larger total area than the apartment object that is being compared.
+
+An example of how the method should work:
+
+```cs
+public static void Main(string[] args)
+{
+  Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+  Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+  Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+
+  Console.WriteLine(manhattanStudioApt.LargerThan(atlantaTwoBedroomApt));
+  Console.WriteLine(bangorThreeBedroomApt.LargerThan(manhattanStudioApt));
+}
+```
+
+```console
+False
+True
+```
+
+Fill in the method **public int PriceDifference(Apartment compared)** that returns the price difference of the apartment object whose method was called and the apartment object received as the parameter. The price difference is the absolute value of the difference of the prices (price can be calculated by multiplying the price per square by the number of squares). Use the method **private int Price()** to calculate the price for the apartments.
+
+An example of how the method should work:
+
+```cs
+Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+Console.WriteLine(manhattanStudioApt.PriceDifference(atlantaTwoBedroomApt));
+Console.WriteLine(bangorThreeBedroomApt.PriceDifference(manhattanStudioApt));
+```
+
+```console
+71600
+107000
+```
+
+Fill in the method **public bool MoreExpensiveThan(Apartment compared)** that returns true if the apartment object whose method is called is more expensive than the apartment object being compared.
+
+An example of how the method should work:
+
+```cs
+Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+Console.WriteLine(manhattanStudioApt.MoreExpensiveThan(atlantaTwoBedroomApt));
+Console.WriteLine(bangorThreeBedroomApt.MoreExpensiveThan(manhattanStudioApt));
+```
+
+```console
+False
+True
+```
