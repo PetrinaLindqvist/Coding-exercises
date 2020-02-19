@@ -11,7 +11,7 @@ namespace exercise_14
       // Write your code here:
       string userInput = Console.ReadLine();
       bool booleanValue = System.Convert.ToBoolean(userInput);
-      Console.WriteLine("True");
+      Console.WriteLine(booleanValue);
     }
   }
 }

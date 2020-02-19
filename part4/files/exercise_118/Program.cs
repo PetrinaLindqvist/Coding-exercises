@@ -13,9 +13,8 @@ namespace exercise_118
 
       // DO NOT TOUCH THE CODE ABOVE!
       // implement reading the file here;
+      string names = File.ReadAllText(file);
       
-
-
 
       // DO NOT TOUCH THE CODE BELOW!
       Console.WriteLine("");

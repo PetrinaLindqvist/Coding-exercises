@@ -18,7 +18,6 @@ namespace exercise_17
       int second = Convert.ToInt32(numBer2);
       Console.WriteLine("The sum is " + (first + second));
    
-      Console.WriteLine(first + second = third)
     }
   }
 }
