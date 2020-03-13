@@ -8,24 +8,25 @@ namespace extra_09
     {
       // Add your code here:
       List<string> list = new List<string>(){ "This is a string", "This is magic", "THIS IS PATRICK!" };
+      
       int i = 0;
-      
-      while (true)
+      for (i = 0; i < list.Count; i++)
       {
-        
-        if (i > list.Count)
-        {
-          Console.WriteLine(list[i]);
-          i ++;
-        }
+        Console.WriteLine(list[i]);
+      }
+      int index = 0;
+      while (index < list.Count)
+      {
+          Console.WriteLine(list[index]);
+          index++;
+      }
 
-      
-      
-        
+      foreach(string line in list)
+      {
+        Console.WriteLine(line);
       }
       
-      
-  
-   }
+        
+    }
   }
 }
