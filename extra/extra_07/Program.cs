@@ -8,19 +8,24 @@ namespace extra_07
     {
       // Add your code here:
       Console.WriteLine("Give integers, 'end' quits:");
+      int sum = 0;
       
       while (true)
       {
-      int nbr = Convert.ToInt32(Console.ReadLine());
-      string word = Console.ReadLine();
-     
+      
+        string word = Console.ReadLine();
+      
         if (word == "end")
         {
           break; 
         }
-        Console.WriteLine("Sum: " + (nbr + nbr));
+        sum += Convert.ToInt32(word);
       }
     
+       Console.WriteLine("Sum: " + sum);
+    
     }
+
+     
   }
 }
