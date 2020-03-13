@@ -18,6 +18,6 @@ namespace extra_10
        }
      
      }
-    Console.WriteLine();
+        Console.WriteLine(" ");
   }
 }
