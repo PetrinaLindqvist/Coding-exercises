@@ -9,10 +9,15 @@ namespace extra_13
     {
       // Add your code here:
       List<Person> kindergarten = new List<Person>();
-      list.Add("Lily, 1");
-      list.Add("Mike, 0");
+      
+      Person mike = new Person("Mike");
+      Person lily = new Person("Lily");
+      
+      kindergarten.Add(mike);
+      kindergarten.Add(lily);
+      
+      lily.GrowOlder(1);
      
-    
     foreach (Person child in kindergarten) 
     {
       Console.WriteLine(child);
