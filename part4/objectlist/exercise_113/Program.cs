@@ -41,7 +41,7 @@ namespace exercise_113
                 {
                     Console.WriteLine(item);
                 }
-                else if (anything == "name")
+                else if (anything == "title")
                 {
                     Console.WriteLine(item.title);
                 }
