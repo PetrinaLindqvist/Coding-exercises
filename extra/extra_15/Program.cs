@@ -7,7 +7,9 @@ namespace extra_15
     public static void Main(string[] args)
     {
       // Add your code here:
-
+       Cube cube = new Cube(3);
+       Console.WriteLine(cube);   
+       
     }
   }
 }
