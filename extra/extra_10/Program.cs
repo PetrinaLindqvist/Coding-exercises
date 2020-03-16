@@ -14,10 +14,16 @@ namespace extra_10
      {
        for (int i = 0; i < array.Length; i++)
        {
-         Console.WriteLine("*");
+         for (int num = 0; num < array[i]; num++)
+                {
+                    Console.Write("*");
+                }
+                    Console.WriteLine();
+         
+         
        }
-     
+   
      }
-        Console.WriteLine(" ");
+        
   }
 }
