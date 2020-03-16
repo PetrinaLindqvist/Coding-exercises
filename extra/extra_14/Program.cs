@@ -7,9 +7,9 @@ namespace extra_14
     public static void Main(string[] args)
     {
       // Add your code here:
-      string[] lines = File.ReadAllLines("text.txt");
+      string text = File.ReadAllText("text.txt");
       
-      Console.WriteLine(lines);
+      Console.WriteLine(text);
     }
    
     
