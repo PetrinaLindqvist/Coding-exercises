@@ -12,11 +12,15 @@ namespace extra_06
       int sum = nbr1 + nbr2;
       double squareRoot = Math.Sqrt(sum);
       
-      if (sum < 0)
+      if (sum >= 0)
+      {
+        Console.WriteLine(squareRoot);
+      }
+      else
       {
         Console.WriteLine("0");
       }
-      Console.WriteLine(squareRoot);
+      
       
     
     }
