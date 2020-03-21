@@ -19,22 +19,22 @@ namespace exercise_135
     }
     public string DrawJoke()
     {
-        if (jokes.Count == 0)
+        if (this.jokes.Count == 0)
         {
             return "Jokes are in short supply.";
         }
         else
           {
             Random draw = new Random();
-            int index = draw.Next(0, jokes.Count);
-            return jokes[index];
+            int index = draw.Next(0, this.jokes.Count);
+            return this.jokes[index];
           }
     
     
     } 
     public void PrintJokes()
     {
-        foreach (string joke in jokes)
+        foreach (string joke in this.jokes)
           {
             Console.WriteLine(joke);
           }
