@@ -7,7 +7,7 @@ namespace extra_08
     public static void Main(string[] args)
     {
       // Add your code here:
-      ChristmasTree(4);
+      ChristmasTree(10);
 
     }
       public static void PrintStars(int number)
@@ -20,12 +20,11 @@ namespace extra_08
       
       }
       
-      public static void PrintSpaces(int size)
+      public static void PrintSpaces(int number)
       {
-        for (int i = 1; i <= size; i++)
+        for (int i = 1; i < number; i++)
         {
-          PrintSpaces(size-i);
-          PrintStars(i);
+          Console.Write(" ");
         }
       
       
@@ -44,10 +43,10 @@ namespace extra_08
     } 
       public static void ChristmasTree(int height)
       {
-        for (int i= 1; i<= height; i++)
+        for (int i = 1; i < height; i++)
         {
           PrintSpaces(height-i);
-          PrintStars ((2*i)-1);
+          PrintStars (2*i-1);
         }
         PrintSpaces(height-2);
         PrintStars(3);
