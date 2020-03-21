@@ -45,7 +45,10 @@ namespace exercise_113
                 {
                     Console.WriteLine(item.title);
                 }
-
+                else
+                {
+                    break;
+                }
 
             }
 
