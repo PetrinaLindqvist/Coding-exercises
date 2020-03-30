@@ -12,7 +12,7 @@ namespace Exercise
       abbreviations.AddAbbreviation("etc.", "and so on");
       abbreviations.AddAbbreviation("i.e", "more precisely");
 
-      string text = "e.g i.e etc. lol";
+      string text = "e.g etc. i.e lol";
 
       foreach (string part in text.Split(" "))
       {
