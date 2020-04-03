@@ -5,23 +5,23 @@ namespace Exercise
 {
   public class Program 
   {
-    public static void Main (string[] args) 
+    public static void Main(string[] args) 
     {
       Dictionary<string, string> dict = new Dictionary<string, string> ();
-      dict.Add ("f.e", "for example");
-      dict.Add ("etc.", "and so on");
-      dict.Add ("i.e", "more precisely");
+      dict.Add("f.e", "for example");
+      dict.Add("etc.", "and so on");
+      dict.Add("i.e", "more precisely");
 
-      PrintKeys (dict);
-      Console.WriteLine ("---");
-      PrintKeysWhere (dict, "i");
-      Console.WriteLine ("---");
-      PrintValuesOfKeysWhere (dict, ".e");
+      PrintKeys(dict);
+      Console.WriteLine("---");
+      PrintKeysWhere(dict, "i");
+      Console.WriteLine("---");
+      PrintValuesOfKeysWhere(dict, ".e");
     }
 
     public static void PrintKeys(Dictionary<string, string> dict) 
     {
-      foreach (KeyValuePair<string, string> kvp in dict)
+      foreach(KeyValuePair<string, string> kvp in dict)
       {
         Console.WriteLine(kvp.Key);  
       }
@@ -30,7 +30,7 @@ namespace Exercise
     {
        Dictionary<string, string>.KeyCollection keys = dict.Keys;
 
-      foreach (string key in keys) 
+      foreach(string key in keys) 
       {
         if (key.Contains(text)) 
         {
@@ -43,9 +43,9 @@ namespace Exercise
 
       Dictionary<string, string>.KeyCollection keys = dict.Keys;
 
-      foreach (string key in keys) 
+      foreach(string key in keys) 
       {
-        if (key.Contains(text)) 
+        if(key.Contains(text)) 
         {
           Console.WriteLine(dict[key]);
         }

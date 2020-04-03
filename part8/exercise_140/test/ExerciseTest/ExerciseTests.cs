@@ -30,7 +30,7 @@ namespace ExerciseTest
       string code = File.ReadAllText("../../src/Exercise/Program.cs");
       int count = Regex.Matches(code, @"public static void Main\(string\[\] args\)").Count;
 
-      Assert.AreEqual(0, count, "Do not destroy the Main class from Program.cs!");
+      Assert.AreEqual(1, count, "Do not destroy the Main class from Program.cs!");
     }
 
     [Test]
