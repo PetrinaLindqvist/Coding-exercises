@@ -4,6 +4,10 @@ namespace Exercise
 {
   public class IOU
   {
+    public IOU()
+    {
+
+    }
     public void ChangeDebt(string toWhom, int amount)
     {
 

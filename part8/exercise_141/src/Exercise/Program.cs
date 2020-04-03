@@ -30,14 +30,16 @@ namespace Exercise
     public static void PrintValueIfNameContains (Dictionary<string, Book> dictionary, string text) 
     {
       foreach (KeyValuePair<string, Book> kvp in dictionary)
-     
-      text = text.ToLower();
-      if (kvp.Value.name.Contains(text)) 
-      {
-         Console.WriteLine(kvp.Value); 
-      }
-    
-   
-    }
+            {
+                string lowCase = kvp.Value.name.ToLower();
+
+                if (!lowCase.Contains(text))
+                {
+                    continue;
+                }
+                Console.WriteLine(kvp.Value);
+            }
+
+        }
   }
 }
