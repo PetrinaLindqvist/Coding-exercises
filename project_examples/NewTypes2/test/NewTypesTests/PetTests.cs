@@ -10,7 +10,7 @@ public class PetTests
     string expected = "Woof!";
     string actual = new Dog().TalkToOwner();
 
-    Assert.AreNotEqual(expected, actual);
+    Assert.AreEqual(expected, actual);
   }
 
   [Test]
@@ -19,6 +19,6 @@ public class PetTests
     string expected = "Meow!";
     string actual = new Cat().TalkToOwner();
 
-    Assert.AreNotEqual(expected, actual);
+    Assert.AreEqual(expected, actual);
   }
 }
