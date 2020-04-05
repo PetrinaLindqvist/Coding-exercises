@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Calculator2;
+using Calculators;
 
 namespace CalculatorTest
 {

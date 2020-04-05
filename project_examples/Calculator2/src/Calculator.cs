@@ -1,4 +1,5 @@
-public class Calculator
+namespace Calculators
+{public class Calculator
 {
 
   public int value { get; private set; }
@@ -17,4 +18,5 @@ public class Calculator
   {
     this.value = this.value - number;
   }
+}
 }
