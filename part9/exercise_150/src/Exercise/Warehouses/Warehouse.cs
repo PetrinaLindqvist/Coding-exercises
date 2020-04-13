@@ -1,7 +1,7 @@
 namespace Exercise
 {
   using System;
-  public class Warehouse
+  public class Warehouse 
   {
     public int balance { get; set; }
     public int capacity { get; set; }
@@ -39,7 +39,7 @@ namespace Exercise
       }
     }
 
-    public int TakeFromWarehouse(int amount)
+    public int TakeFromWarehouse(int amount) 
     {
       if (amount <= 0)
       {
