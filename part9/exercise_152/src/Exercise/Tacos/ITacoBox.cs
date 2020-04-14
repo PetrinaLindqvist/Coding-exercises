@@ -1,9 +1,12 @@
 namespace Exercise
 {
+ 
   public interface ITacoBox
   {
-    int TacosRemaining();
-
-    void Eat();
+    public int TacosRemaining();
+    
+    public void Eat();
+    
+    
   }
 }
