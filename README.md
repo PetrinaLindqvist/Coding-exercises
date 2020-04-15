@@ -2170,7 +2170,7 @@ Highest age: 11
 
 ## Object Oriented Programming
 
-When crEating own classes, make sure to include the correct **namespace** so you can reference it from your Program.cs file. We'll get to namespaces later. For now, whenever you crEate a new class, **use the folder name as the namespace**.
+When creating own classes, make sure to include the correct **namespace** so you can reference it from your Program.cs file. We'll get to namespaces later. For now, whenever you crEate a new class, **use the folder name as the namespace**.
 
 You can test your own classes in the Main if you want to, but it is not necessary. It does, of course, help you understand your code, and the exercises might include some examples, how the classes should work.
 
@@ -2228,7 +2228,7 @@ Personal account balance: 100
 
 In this exercise, you'll practice crEating a class.
 
-[**CHECK THIS MATERIAL FOR HELP**](https://centria.github.io/basic-coding/part4/1/#crEating-a-new-class)
+[**CHECK THIS MATERIAL FOR HELP**](https://centria.github.io/basic-coding/part4/1/#creating-a-new-class)
 
 Name the class **Dog** (and the file **Dog.cs**)
 
@@ -2605,7 +2605,7 @@ In this exercise series, a class called PaymentCard is crEated which aims to mim
 
 The template includes the **Program.cs** file. You have to crEate the **PaymentCard.cs** yourself.
 
-- Add a new class to the project called **PaymentCard** (by crEating the file mentioned above).
+- Add a new class to the project called **PaymentCard** (by creating the file mentioned above).
 - CrEate the PaymentCard object's constructor, which is passed the opening balance of the card, and which then stores that balance in the object's internal variable. 
 - Write the ToString method, which will return the card's balance in the form **"The card has a balance of X euros"**.
 
@@ -4390,7 +4390,7 @@ public class LicensePlate
   private string liNumber;
   private string country;
 
-  public LicensePlate(String country, String liNumber)
+  public LicensePlate(string country, string liNumber)
   {
     this.liNumber = liNumber;
     this.country = country;
@@ -4509,7 +4509,7 @@ Your assignment is to crEate the class **DictionaryOfManyTranslations**. In it c
 * **public void Add(string word, string translation)** adds the translation for the word and preserves the old translations.
 * **public List<string> Translate(string word)** returns a list of the translations added for the word. If the word has no translations, the method should return an empty list.
 * **public void Remove(string word)** removes the word and all its translations from the dictionary.
-It's probably best to add the translations to an object variable that is of the type **Dictionary\<string, List\<String\> \>**
+It's probably best to add the translations to an object variable that is of the type **Dictionary\<string, List\<string\> \>**
 
 An example:
 
@@ -4549,7 +4549,7 @@ valehdella
 
 #### Exercise_147
 
-Your task is crEating a class called **StorageFacility** that can be used to keep track of storage units and their contents. The class is to implement the following methods:
+Your task is creating a class called **StorageFacility** that can be used to keep track of storage units and their contents. The class is to implement the following methods:
 
 * **public void Add(string unit, string item)** adds the parameter item to the storage unit that is also given as a parameter.
 
@@ -4859,7 +4859,7 @@ Milk: balance: 190, space left 810
 
 #### Exercise_151
 
-In the exercise template you'll find the classes **Item** and **Box**. Box is an abstract class, where adding multiple items is implemented by repEatedly calling the **Add-method**. The Add-method, meant for adding a single item, is abstract, so every class that inherits it, must implement it. Your assignment is to edit the Box-class and to implement different kinds of boxes based on the Box class.
+In the exercise template you'll find the classes **Item** and **Box**. Box is an abstract class, where adding multiple items is implemented by repeatedly calling the **Add-method**. The Add-method, meant for adding a single item, is abstract, so every class that inherits it, must implement it. Your assignment is to edit the Box-class and to implement different kinds of boxes based on the Box class.
 
 * Implement the **Equals** and **GetHashCode** methods for the Item-class. They are needed, so that you can use the contains-methods of different lists and collections. *Implement the methods in such a way that value of the weight instance variable of the Item-class isn't considered.*
 
@@ -5213,4 +5213,175 @@ c.Purr();
 Dog barks 
 Garfield purrs 
 Garfield purrs
+```
+
+# Part 10
+
+#### Exercise_156
+
+You are provided with the class **Human**. A human has a name and wage information. Implement the interface **IComparable** in a way, that the **CompareTo**-method sorts the humans according to wage from biggest to smallest salary. The Program.cs already contains the following code for trying out your method.
+
+```cs
+List<Human> humans = new List<Human>();
+humans.Add(new Human("Merja", 500));
+humans.Add(new Human("Pertti", 80));
+humans.Add(new Human("Matti", 150000));
+
+// Sorts the list when your ComparedTo works
+// Sort uses CompareTo internally
+humans.Sort();
+humans.ForEach(Console.WriteLine);
+```
+
+```console
+Matti 150000
+Merja 500
+Pertti 80
+```
+
+#### Exercise_157
+
+The exercise template includes the class **Student**, which has a name. Implement the **IComprable**-interface in the Student-class in a way, that the CompareTo-method sorts the students in alphabetical order based on their names.
+
+HINT: The name of the Student is a string, which implements Comparable itself. You may use it's CompareTo-method for your advantage when implementing the method for the Student-class. Note that string.CompareTo is case sensitive, but at this exercise, we don't have to worry about it.
+
+```cs
+Student first = new Student("jamo");
+Student second = new Student("jamo1");
+
+// Should print -1
+Console.WriteLine(first.CompareTo(second));
+``` 
+
+#### Exercise_158
+
+Write a program that reads user input for books and their age recommendations.
+
+The program asks for new books until the user gives an empty string (only presses enter). After this, the program will print the amount and names of the books.
+
+* Implement the reading and printing the books first in the **TextInterface**, the ordering of them doesn't matter yet.
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older)
+```
+
+* Expand your program so, that the books are sorted based on their age recommendations when they are printed. If two (or more) books share the same age recommendations the order between them does not matter. (i.e. create ComparedTo in Book class)
+
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older)
+```
+
+* Expand your program, so that it sorts the books with the same age recommendation based on their name alphabetically. HINT! Use an if for the age recommendations!
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older)
+```
+
+#### Exercise_159
+
+In the template is a class **Checker**, which has three methods. Your task is to fill in the methods as follows:
+
+* Use regular expressions in **DayOfWeek(string str)**, which returns true if the parameter string is an abbreviation of a day of the week (mon, tue, wed, thu, fri, sat, sun)
+
+* Use regular expressions in **AllVowels(string str)**, which returns true if all the letters in given string are wovels.
+
+NOTICE! For simplicity's sake, in this exercises the letters that are considered vowels are: a, e, i, o, and u. You don't have to take into account capital letters, but you can if you want to.
+
+* Use regular expressions in **TimeOfDay(string str)**  to check whether the parameter string expresses a time of day in the form hh:mm:ss (hours, minutes, and seconds each always take up two spaces).
+
+NOTICE! The last one is tricky, and you might want to search the internet for answers.
+
+```cs
+Checker check = new Checker();
+
+Console.WriteLine(check.DayOfWeek("tue"));
+  Console.WriteLine(check.DayOfWeek("tues"));
+
+Console.WriteLine(check.AllVowels("aeiouaaeeioiouoiaoueaiaeiou"));
+Console.WriteLine(check.AllVowels("aeiouaaeeioiouoKiaoueaiaeiou"));
+
+Console.WriteLine(check.TimeOfDay("23:23:59"));
+Console.WriteLine(check.TimeOfDay("00:00:60"));
+```
+
+```console
+True
+False
+True
+False
+True
+False
 ```
