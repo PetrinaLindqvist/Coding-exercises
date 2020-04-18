@@ -21,7 +21,7 @@ namespace Exercise
     public int CompareTo(Student another)
     {
 
-      return 0;
+      return this.name.CompareTo(another.name);
     }
     //END SOLUTION
   }
