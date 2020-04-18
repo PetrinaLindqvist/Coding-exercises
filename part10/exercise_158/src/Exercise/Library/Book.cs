@@ -10,6 +10,8 @@ namespace Exercise
     public Book(string name, int age)
     {
       // Fill in the blanks
+      this.name = name;
+      this.age = age;
     }
 
 
@@ -24,8 +26,34 @@ namespace Exercise
     {
 
       // Do some magic here
-      return 0;
+       // If compared book is null, return 1
+      // "this" comes after null
+      if (other == null)
+      {
+        return 1;
+      }
+      // If height is equal, return 0
+      // They are now equal in comparison
+      if (this.age == other.age)
+      {
+        return this.name.CompareTo(other.name);
+      }
+      // If this height is more
+      // Return 1
+      // "this" comes after compared member
+      else if (this.age > other.age)
+      {
+        return 1;
+      }
+      // As all other options have been done
+      // Return -1
+      // "this" comes before compared member
+      else
+      {
+        return -1;
+      }
     }
+    
 
   }
 }
