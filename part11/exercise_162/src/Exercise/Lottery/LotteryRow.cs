@@ -34,10 +34,10 @@ namespace Exercise
       // initialize the list for numbers
       this.numbers = new List<int>();
       // Implement the randomization of the numbers by using the method ContainsNumber() here
-     Random lottery = new Random();
-     for (int i = 0; i < 7; i++)
+     Random lotteryNbr = new Random();
+     while (this.numbers.Count < 7)
      {
-       int number = lottery.Next(1, 40);
+       int number = lotteryNbr.Next(1, 41);
        if(!this.ContainsNumber(number))
        {
          this.numbers.Add(number);
