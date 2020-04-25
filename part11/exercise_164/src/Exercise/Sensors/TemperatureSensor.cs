@@ -3,26 +3,40 @@ namespace Exercise
   using System;
   public class TemperatureSensor : Sensor
   {
+    private bool SensorOn;
 
+    public TemperatureSensor()
+    {
+      this.SensorOn = false;
+    }
     public bool IsOn()
     {
-      return false;
+      return this.SensorOn;
     }
 
 
     public void SetOn()
     {
+      this.SensorOn = true;
     }
 
 
     public void SetOff()
     {
+      this.SensorOn = false;
     }
 
 
     public int Read()
     {
-      return 0;
+      if (IsOn())
+      {
+        return ;
+      }
+      else
+      {
+        throw new InvalidOperationException();
+      }
     }
   }
 }
