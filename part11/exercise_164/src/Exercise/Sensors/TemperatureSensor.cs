@@ -31,11 +31,13 @@ namespace Exercise
     {
       if (IsOn())
       {
-        return ;
+        Random temperature = new Random();
+        int temp = temperature.Next(61) - 30;
+        return temp;
       }
       else
       {
-        throw new InvalidOperationException();
+        throw new InvalidOperationException(" Sensor is off!");
       }
     }
   }
