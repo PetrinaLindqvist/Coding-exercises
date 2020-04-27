@@ -133,12 +133,12 @@ namespace ExerciseTest
     [Test]
     public void SavingToFileShouldWork()
     {
-      string fileName = "savefile.txt";
+      string fileName = "hiddenfile.txt";
       if (File.Exists(fileName))
       {
         File.Delete(fileName);
       }
-      File.CreateText(fileName);
+      File.CreateText(fileName).Close();
       SaveableDictionary dictionary = new SaveableDictionary(fileName);
       dictionary.Load();
       // Translate all the words in the file both ways
