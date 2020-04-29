@@ -6,6 +6,8 @@ namespace Exercise
   public class SaveableDictionary
   {
     private Dictionary<string, string> dictionary;
+    private string file;
+
     public SaveableDictionary()
     {
       this.dictionary = new Dictionary<string, string>();
@@ -13,25 +15,63 @@ namespace Exercise
 
     public SaveableDictionary(string file) : this()
     {
-  
+      this.file = file;
     }
 
     public void Add(string word, string translation)
     {
-      if (!dictionary.ContainsKey(word))
+      if (!this.dictionary.ContainsKey(word))
       {
-        dictionary.Add(word, translation);
+        this.dictionary.Add(word, translation);
+        this.dictionary.Add(translation, word);
       }  
     }
 
     public bool Load()
     {
-      return false;
+      try
+      {
+        string[] lines = File.ReadAllLines(this.file);
+        foreach (string line in lines)
+        {
+          string[] parts = line.Split(":");
+          string word = parts[0];
+          string translation = parts[1];
+          Add(word, translation);
+        }
+              
+      }  
+      catch 
+      {
+        return false;
+      }
+      return true;
     }
 
     public bool Save()
     {
-      return false;
+      List<string> alreadySaved = new List<string>();
+      try
+      {
+        StreamWriter sw = new StreamWriter(this.file);
+        foreach (string word in this.dictionary.Keys) 
+        {
+          string composition = word + ":" + this.dictionary[word];
+          string backwards = this.dictionary[word] + ":" + word;
+          if (!alreadySaved.Contains(composition)&& !alreadySaved.Contains(backwards))
+          {
+            alreadySaved.Add(composition);
+            sw.WriteLine(composition);
+          }
+        }
+      sw.Close();
+      }
+      catch
+      {
+        return false;
+      }
+      return true;
+      
     }
 
     public string Translate(string word)
@@ -40,25 +80,18 @@ namespace Exercise
       {
         return this.dictionary[word];
       }
-      foreach (KeyValuePair<string, string> words in this.dictionary)
-      {
-        if (words.Value == word)
-        {
-          return words.Key;
-        }
-      }
       return null;  
     }
 
     public void Delete(string word)
     {
-      foreach (KeyValuePair<string, string> words in this.dictionary)
-      {
-        if (words.Key == word | words.Value == word)
+        if (this.dictionary.ContainsKey(word))
         {
-          this.dictionary.Remove(words.Key);
+          string translation = this.dictionary[word];
+          this.dictionary.Remove(word);
+          this.dictionary.Remove(translation);
         }
-      }
     }
+    
   }
 }
